@@ -1058,8 +1058,11 @@
                 addCss(self.$container, 'file-input-new');
             }
             if (self.$container.find('.file-preview-frame').length === 0) {
-                self.initialCaption = '';
-                self.$caption.html('');
+                cap = (!self.overwriteInitial && self.initialCaption.length > 0) ? self.initialCaption : '';
+                self.$caption.html(cap);
+                //self.initialCaption = '';
+                //self.$caption.html('');
+                self.$caption.html(cap);
                 self.setEllipsis();
                 self.$captionContainer.find('.kv-caption-icon').hide();
             }
